@@ -7,7 +7,7 @@ This is a temporary script file.
 pip install pytest
 
 pytest "filename".py
-"""
+
 
 
 def ExtendedEuclidianAlgorithm(firstNumber, secondNumber):
@@ -21,7 +21,7 @@ def ExtendedEuclidianAlgorithm(firstNumber, secondNumber):
     GCD = secondNumber
 
     return GCD, x, y
-
+"""
 
 def EfficientPowerModAlgorithm(base, power, mod):
     powerTemp = 1
@@ -51,6 +51,7 @@ def EfficientPowerModAlgRecur(base, power, mod):
 
     else:
         return partial * partial * base % mod
+
 
 
 def EuclideanGCD(firstNumber, secondNumber):
@@ -124,7 +125,11 @@ def test_allTheFunctions():
     q = 111071162799851912824654144483111874424614301938282297067047351983888441559266175769409398076565391663380417335011869271890831362225479632276860946599190038665921626623960557268331733202620352289428928091329109593819133932848528111395029428743390425837597001656830061559982062375737093320355405637563615886803
     e = 121497340871047561990526349313922431040502436205277029161504074265656522318180600371526800734743195781676485261271407335077142141062183325700299129778874273734144338622599487090131017655398226759216026150060144849693132978936886491999493651200251158512013123761065143321228864622882636292486361150032268778811
 
-    message = 15879465132165498446513216546874695132165346549685163213516351
+    numMessage = 15879465132165498446513216546874695132165346549685163213516351
+
+    textMessage = "This is a message"
+
+
     #p = 31
     #q = 57
     #e = 101
@@ -137,7 +142,7 @@ def test_allTheFunctions():
 
     assert e*d % ((p-1)*(q-1)) == 1
 
-    assert decryptedMessage == message
+    assert decryptedMessage == textMessage
 
 def test_encrypt():
 
@@ -154,6 +159,7 @@ def test_EGCD():
     assert EuclideanGCD(105, 15) == (15, 0, 1)
 
     assert EuclideanGCD(10, 5) == (5, 0, 1)
+    assert EuclideanGCD(1, 213) == (1, 1, 0)
 
 def test_PowerAlg():
 
@@ -181,6 +187,7 @@ def test_ModularInverse():
     assert ModularInverse(5, 29) == 6
     assert ModularInverse(2, 39) == 20
     assert ModularInverse(3, 25) == 17
+
 
 def test_strings():
 
